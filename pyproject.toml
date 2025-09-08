@@ -5,30 +5,28 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "pydantic>=2.9.2",
-    "pycryptodome==3.20.0",
-    "pendulum>=3.0.0",
+    "pydantic>=2.12.0a1",
+    "pendulum>=3.1.0",
     "loguru>=0.7.3",
-    "yarl>=1.19.0",
-    "tenacity>=9.1.2"    
+    "tenacity>=9.1.2",
     "attrs>=25.3.0"
-
 ]
 
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
 
 [tool.uv]
 managed = true
-dev-dependencies = [
-    "mypy",
-    "ruff",
-    "pytest",
-    "pytest-asyncio",
-]
+# 使用阿里云 PyPI 镜像源
+index-url = "https://mirrors.aliyun.com/pypi/simple/"
+# 允许非安全连接到阿里云镜像
+allow-insecure-host = ["mirrors.aliyun.com"]
 
+dev-dependencies = [
+    "ruff>=0.12.12",
+    "pytest>=8.4.2",
+    "pytest-asyncio>=0.26.0",
+    "pyrefly>=0.31.1",
+    "ty>=0.0.1a20",
+]
 
 [tool.hatch.metadata]
 allow-direct-references = true
@@ -36,10 +34,15 @@ allow-direct-references = true
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 
-
 # Exclude a variety of commonly ignored directories.
 exclude = []
 
 [tool.pytest.ini_options]
-color = "yes"
+console_output_style = "progress"
 asyncio_default_fixture_loop_scope = "module"
+# 控制颜色输出
+addopts = "--color=yes"
+
+[tool.dagster]
+module_name = "src.my_dg.definitions.server_definitions"
+#code_location_name = "getting_started_etl_tutorial"

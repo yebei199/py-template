@@ -1,0 +1,24 @@
+###### configuring what to type check and where to import from
+
+# check all files in "."
+project_includes = ["."]
+# exclude dotfiles
+project_excludes = ["**/.[!/.]*"]
+# import project files from "."
+search_path = [".", "src", ".venv"]
+# do not include any third-party packages
+site_package_path = [".venv/Lib/site-packages"]
+
+python_platform = "win"
+python_version = "3.13"
+python_interpreter = ".venv/Scripts/python.exe"
+
+replace_imports_with_any = ["sympy.*", "*.series"]
+ignore_errors_in_generated_code = true
+use_untyped_imports = true
+ignore_missing_source = true
+
+# disable `bad-assignment` and `invalid-argument` for the whole project
+
+[errors]
+index-error = false

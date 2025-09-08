@@ -3,7 +3,7 @@ services:
   pair3:
     build:
       context: .
-      dockerfile: Dockerfile1
+      dockerfile: DockerFile1
       target: development
     image: template:0.1.1
     command: [ "sh","-c","uv run ao.py" ]
