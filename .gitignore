@@ -4,7 +4,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# 我们自己的文件
 env.nu
 .env
 *.zip

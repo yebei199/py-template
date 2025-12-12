@@ -4,14 +4,22 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
+
 dependencies = [
-    "pydantic>=2.12.0a1",
-    "pendulum>=3.1.0",
-    "loguru>=0.7.3",
-    "tenacity>=9.1.2",
-    "attrs>=25.3.0"
+    "pydantic",
+    "pendulum",
+    "loguru",
+    "tenacity",
+    "attrs"
 ]
 
+[dependency-groups]
+dev = [
+    "ruff",
+    "pytest",
+    "pytest-asyncio",
+    "pyrefly",
+]
 
 [tool.uv]
 managed = true
@@ -19,14 +27,6 @@ managed = true
 index-url = "https://mirrors.aliyun.com/pypi/simple/"
 # 允许非安全连接到阿里云镜像
 allow-insecure-host = ["mirrors.aliyun.com"]
-
-dev-dependencies = [
-    "ruff>=0.12.12",
-    "pytest>=8.4.2",
-    "pytest-asyncio>=0.26.0",
-    "pyrefly>=0.31.1",
-    "ty>=0.0.1a20",
-]
 
 [tool.hatch.metadata]
 allow-direct-references = true
