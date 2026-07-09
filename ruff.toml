@@ -8,7 +8,7 @@ output-format = "grouped"
 [lint]
 preview = true
 select = [
-    "E", "W", "N", "PD", "F", "UP", "B", "SIM", "PL", "C90", "I",
+    "E", "W", "N", "PD", "F", "UP", "B", "SIM", "PL", "C90", "I","ANN",
 ]
 ignore = ["E501", "E203", "E301", "PLR0913", "E722", "PLR2004"]
 
