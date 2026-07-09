@@ -16,6 +16,10 @@ extend-fixable = ["UP045", "UP034", "UP007"]
 extend-safe-fixes = ["F601", "I001", "PD002", "N804", "N805", "W293", "W291",
     "E227", "UP045", "UP034", "UP007"]
 
+# 测试用例按功能分组成类，方法不使用 self 属正常，关掉 no-self-use 误报
+[lint.per-file-ignores]
+"**/tests/**" = ["PLR6301"]
+
 
 [lint.mccabe]
 max-complexity = 10
